@@ -1,6 +1,6 @@
 name: Build Apocalypse Mod
 
-'on':
+on:
   push:
     branches:
       
@@ -10,13 +10,14 @@ workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       
 name: Checkout
       uses: actions/checkout@v4
 
       
-name: Setup Java
+name: Setup Java 21
       uses: actions/setup-java@v4
       with:
         distribution: temurin
@@ -24,11 +25,5 @@ name: Setup Java
 
       
 name: Build Mod
-      run: gradle build
-
-      
-name: Upload Mod
-      uses: actions/upload-artifact@v4
-      with:
-        name: Apocalypse-Mod
-        path: build/libs/*.jar
+      run: |
+        chmod +x gradlew./gradlew build
