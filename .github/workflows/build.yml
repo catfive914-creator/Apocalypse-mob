@@ -1,17 +1,14 @@
 name: Build Apocalypse Mod
-
 on:
   push:
-    branches:
-      
-main      -push:
     branches:
       
 main
 workflow_dispatch:
 
 jobs:
-  build:
+
+ build:
     runs-on: ubuntu-latest
 
     steps:
